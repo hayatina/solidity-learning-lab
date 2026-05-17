@@ -405,3 +405,78 @@ Voting
 - Learned distinction between storage state and event logs
 - Enabled off-chain UI synchronization through event emission
 
+## Membership-Based Governance
+
+- Implemented allowlist-based Sybil resistance using mapping
+- Constructor initializes member set including deployer
+- Restricted proposal creation and voting to authorized members
+- Combined access control with voting logic
+- Learned basic governance permission model used in early DAOs
+
+## Governance Execution System
+
+- Added execution flag to prevent re-execution
+- Triggered proposal execution after reaching vote threshold (10 yes votes)
+- Used low-level call to execute stored calldata on target contract
+- Prevented double execution with boolean state tracking
+- Completed full governance lifecycle: proposal → vote → execution
+- Modeled simplified DAO execution mechanism
+
+## Governance Execution System
+
+- Added execution flag to prevent re-execution
+- Triggered proposal execution after reaching vote threshold (10 yes votes)
+- Used low-level call to execute stored calldata on target contract
+- Prevented double execution with boolean state tracking
+- Completed full governance lifecycle: proposal → vote → execution
+- Modeled simplified DAO execution mechanism
+
+
+## Contract Inheritance
+
+- Created multiple contracts inheriting from a base Hero contract
+- Used Solidity `is` keyword for inheritance
+- Understood that inherited logic is compiled into derived contracts
+- Learned that each derived contract is independent at deployment time
+- Practiced modular contract design using inheritance
+
+## Constructor Inheritance
+
+- Passed arguments from derived contracts to base Hero constructor
+- Mage initialized with 50 health, Warrior with 200 health
+- Used explicit base constructor invocation syntax
+- Learned constructor chaining order in inheritance
+- Understood initialization dependency between base and derived contracts
+
+## Virtual and Override Functions
+
+- Implemented polymorphic attack behavior in Mage and Warrior contracts
+- Used override to replace abstract Hero.attack function
+- Differentiated behavior using AttackTypes enum
+- Warrior uses Brawl attack, Mage uses Spell attack
+- Learned abstract contract enforcement and function overriding
+
+## Using super in Inheritance
+
+- Extended base Hero.attack logic instead of replacing it
+- Called super.attack(enemy) after custom attack behavior
+- Maintained energy reduction logic from base contract
+- Learned function chaining in inheritance hierarchy
+- Understood execution order: derived → base
+
+## Ownable Base Contract
+
+- Implemented owner state variable in base contract
+- Initialized owner in constructor using msg.sender
+- Created onlyOwner modifier for access control
+- Used require check to restrict function execution
+- Enabled reusable access control for derived contracts
+
+
+## Multiple Inheritance with Ownership Transfer
+
+- Created Transferable contract inheriting Ownable
+- Implemented transfer function restricted by onlyOwner modifier
+- Updated owner state variable to new address
+- Ensured ownership control persists through inheritance chain
+- Learned stacked inheritance behavior in Solidity
