@@ -130,3 +130,72 @@
 - Performed low-level contract calls using `.call()`
 - Learned the difference between interface calls and raw EVM calls
 
+
+## ABI Encoding with Function Arguments
+
+- Learned how to encode function calls using `abi.encodeWithSignature`
+- Understood how function names and parameter types form calldata
+- Required explicit types like `uint256` instead of `uint`
+- Passed multiple arguments into encoded function calls
+- Practiced building dynamic contract interactions without interfaces
+
+
+## Calldata Forwarding
+
+- Learned how to accept raw calldata using `bytes calldata`
+- Forwarded arbitrary function calls to another contract using `.call`
+- Understood that contracts can act as relayers without decoding data
+- Practiced building flexible execution systems (used in DAOs and multisigs)
+- Learned importance of calldata efficiency for gas optimization
+
+
+## Fallback Function
+
+- Learned that contracts execute `fallback()` when no function matches calldata
+- Triggered fallback using empty calldata `""`
+- Understood how function selectors determine execution flow
+- Learned that invalid or unknown function signatures automatically route to fallback
+- Gained insight into contract behavior when receiving unexpected input
+
+
+.................ESCROW
+
+## Escrow Participants Setup
+
+- Defined core roles in an escrow system:
+  - depositor (funds provider)
+  - beneficiary (receiver of funds)
+  - arbiter (approval authority)
+- Learned how smart contracts model real-world trust systems
+- Introduced role-based architecture in Solidity contracts
+
+## Constructor
+
+- Learned how constructors initialize contract state
+- Stored depositor using `msg.sender`
+- Accepted arbiter and beneficiary as constructor arguments
+- Understood deployment-time trust setup in escrow systems
+- Reinforced idea that contract state is immutable by design after deployment
+
+## Funding the Escrow
+
+- Learned how to make constructors payable
+- Allowed ETH to be sent during contract deployment
+- Understood that contract balance can be initialized at creation time
+- Connected deployment process with real financial locking behavior
+
+## Approval Mechanism
+
+- Implemented fund release function using `approve`
+- Transferred entire contract balance to beneficiary
+- Used `address(this).balance` to access stored ETH
+- Learned how escrow systems complete a payment flow
+- Introduced concept of controlled fund disbursement
+
+## Event Logging in Escrow
+
+- Created `Approved(uint balance)` event
+- Emitted event after successful fund transfer
+- Learned how blockchain events act as a communication layer
+- Understood role of events in frontend indexing and UX
+- Practiced logging important state changes on-chain
