@@ -11,7 +11,7 @@
 
 
 
-## 2. Functions and Value Types
+## - Functions and Value Types
 
 ### Constructor Arguments
 - Learned how constructors initialize contract values during deployment
@@ -46,6 +46,8 @@
 
 
 ## 3. Address Interactions
+
+............Sending Ether
 
 ### Storing Owner
 
@@ -83,3 +85,48 @@
 - Understood that `selfdestruct` transfers the entire contract balance automatically
 - Learned that `selfdestruct` destroys contract state and removes it from the blockchain
 - Practiced replacing manual Ether transfers with contract destruction for fund recovery
+
+............Reverting Transactions
+
+## Constructor Revert
+
+- Learned how constructors can accept Ether during deployment
+- Used `msg.value` inside constructor to validate payment
+- Used `require()` to enforce minimum 1 ether deposit
+- Understood that failing `require` reverts contract deployment
+- Learned that constructors are the only functions executed at deployment time
+
+## Payable Constructor & Ownership
+
+- Learned that constructors must be marked `payable` to receive ETH during deployment
+- Used `msg.value` inside constructor for initial funding validation
+- Combined ownership pattern with funded deployment
+- Understood how deployment-time ETH transfer works in smart contracts
+
+
+## Function Modifiers (onlyOwner)
+
+- Learned how modifiers add reusable logic to functions
+- Implemented `onlyOwner` modifier to restrict access
+- Used `require(msg.sender == owner)` for authorization
+- Understood `_` as the placeholder for function execution
+- Replaced repeated access checks with reusable modifier pattern
+
+.............Calling Contracts
+
+## Interfaces & External Calls
+
+- Learned how contracts interact using interfaces
+- Used `interface` to define external contract functions
+- Called another contract using `IHero(hero).alert()`
+- Understood how Solidity encodes function calls into calldata
+- Practiced safe contract-to-contract communication
+
+## Function Signatures & Low-Level Calls
+
+- Learned that function signatures are hashed using keccak256
+- Understood that first 4 bytes identify the function in calldata
+- Used `abi.encodeWithSignature` to generate calldata manually
+- Performed low-level contract calls using `.call()`
+- Learned the difference between interface calls and raw EVM calls
+
