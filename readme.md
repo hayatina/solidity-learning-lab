@@ -17,6 +17,7 @@ Course Focus: Solidity fundamentals, smart contract development, Ethereum intera
 
 Name	          Id                         Contribution
 Hayat Musa     ugr/25497/14           Completed full course exercises 
+
 Helen Lema     ugr/25497/14           Completed full course exercises
 
 
